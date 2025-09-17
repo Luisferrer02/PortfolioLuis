@@ -1,0 +1,56 @@
+{
+  "nav": {"projects": "Proyectos", "about": "Sobre mí", "skills": "Habilidades", "experience": "Experiencia", "education": "Educación", "contact": "Contacto"},
+  "hero": {
+    "badge": "Ingeniero de Software en formación",
+    "headline": "Luis Ferrer Forteza",
+    "sub": "Construyo soluciones end‑to‑end en web, datos y IA",
+    "ctaProjects": "Ver proyectos",
+    "ctaCV": "Descargar CV"
+  },
+  "projects": {
+    "title": "Proyectos destacados",
+    "filters": {"all":"Todos","web":"Web","ml":"ML/IA","mobile":"Móvil"},
+    "placeholderDesc": "Descripción breve aquí. Sustituir por el proyecto real cuando esté listo.",
+    "details": "Detalles",
+    "github": "GitHub",
+    "demo": "Demo"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "text": "Ingeniero de Software en formación con experiencia en empresas tecnológicas de gran escala y equipos Agile/Scrum. Base sólida en programación, análisis de datos e IA (CNN), con experiencia full‑stack web y móvil desde la ingeniería de datos hasta la entrega de aplicaciones. Español y catalán nativos. Inglés C1."
+  },
+  "skills": {
+    "title": "Habilidades",
+    "groups": {
+      "fullstack": "Desarrollo full‑stack",
+      "databases": "Bases de datos",
+      "workflow": "Metodología",
+      "dsai": "Data Science e IA"
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "juniperTitle": "Desarrollador Junior (Prácticas)",
+    "juniperDates": "09/07/2024 – 09/08/2024 · Palma de Mallorca, España",
+    "juniperBullets": [
+      "Desarrollo y soporte de software con foco en calidad y escalabilidad.",
+      "Resolución de incidencias y proyectos colaborativos Agile.",
+      "Optimización de flujos de trabajo en entornos reales."
+    ],
+    "ericssonTitle": "Software Developer Intern",
+    "ericssonDates": "07/2025 – Actual · Madrid, España",
+    "ericssonBullets": [
+      "Colaboración en equipo full‑stack internacional (Agile/Scrum).",
+      "Nuevas funcionalidades y resolución de bugs en producción.",
+      "Exposición a prácticas corporativas.",
+      "Experiencia en CI, control de versiones y despliegue."
+    ]
+  },
+  "education": {
+    "title": "Educación",
+    "utad": "Ingeniería del Software — U‑tad (Nivel 6 EQF‑MEC)",
+    "utadMeta": "2023 – Actual · Madrid, España",
+    "utadBullets": ["Estadística, IA, ML, Big Data.", "Proyectos de ETL, análisis predictivo y visualización de datos."]
+  },
+  "contact": {"title": "Contacto", "email": "Correo", "cv": "CV (EN)", "cvEs": "CV (ES)"}
+}

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --card: #fff; --card-ink: #000; }
+.dark :root { --card: #000; --card-ink: #fff; }
+
+html { scroll-behavior: smooth; }
+
+/* Brutalist touches */
+.card {
+  @apply border-2 border-black dark:border-white bg-[var(--card)] text-[var(--card-ink)] shadow-[8px_8px_0_0_rgba(0,0,0,1)] dark:shadow-[8px_8px_0_0_rgba(255,255,255,1)] transition-transform;
+}
+.card:hover { transform: translate(-2px,-2px); }
+
+.btn {
+  @apply border-2 border-black dark:border-white px-4 py-2 font-bold uppercase tracking-wide;
+}
+

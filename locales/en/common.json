@@ -1,0 +1,57 @@
+{
+  "nav": {"projects": "Projects", "about": "About", "skills": "Skills", "experience": "Experience", "education": "Education", "contact": "Contact"},
+  "hero": {
+    "badge": "Software Engineer in training",
+    "headline": "Luis Ferrer Forteza",
+    "sub": "Building end‑to‑end web, data & AI solutions",
+    "ctaProjects": "View Projects",
+    "ctaCV": "Download CV"
+  },
+  "projects": {
+    "title": "Selected Projects",
+    "filters": {"all":"All","web":"Web","ml":"ML/AI","mobile":"Mobile"},
+    "placeholderDesc": "Short description goes here. Replace with your real project when ready.",
+    "details": "Details",
+    "github": "GitHub",
+    "demo": "Demo"
+  },
+  "about": {
+    "title": "About",
+    "text": "Software Engineer in training with experience in large-scale technology companies and Agile/Scrum teams. Solid foundation in programming, data analysis and AI (CNN), with full‑stack web & mobile experience from data engineering to application delivery. Fluent in English (C1), Spanish and Catalan."
+  },
+  "skills": {
+    "title": "Skills",
+    "groups": {
+      "fullstack": "Full‑stack Development",
+      "databases": "Databases",
+      "workflow": "Workflow",
+      "dsai": "Data Science & AI"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "juniperTitle": "Junior Developer Intern",
+    "juniperDates": "09/07/2024 – 09/08/2024 · Palma de Mallorca, Spain",
+    "juniperBullets": [
+      "Software development and support focused on quality and scalability.",
+      "Troubleshooting and collaborative Agile projects.",
+      "Workflow optimization in real environments."
+    ],
+    "ericssonTitle": "Software Developer Intern",
+    "ericssonDates": "07/2025 – Current · Madrid, Spain",
+    "ericssonBullets": [
+      "Collaboration in an international full‑stack team (Agile/Scrum).",
+      "Feature development and bug fixing in production.",
+      "Exposure to corporate development practices.",
+      "Hands‑on CI, version control and deployment."
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "utad": "Software Engineering — U‑tad (EQF level 6)",
+    "utadMeta": "2023 – Current · Madrid, Spain",
+    "utadBullets": ["Statistics, AI, ML, Big Data.", "Academic projects in ETL, predictive analysis and data visualization."]
+  },
+  "contact": {"title": "Contact", "email": "Email", "cv": "CV (EN)", "cvEs": "CV (ES)"}
+}
+
