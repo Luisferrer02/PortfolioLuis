@@ -1,13 +1,11 @@
-/** @type {import('next').NextConfig} */
-const isGhPages = process.env.GITHUB_PAGES === 'true'
-const repoBasePath = '/portfolio' // your GitHub Pages project path
+// next.config.mjs
+const isProd = process.env.NODE_ENV === 'production'
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // enables static export
+  output: 'export',                        // genera /out con `next build`
+  basePath: isProd ? '/PortfolioLuis' : '', // ← cambia esto
   images: { unoptimized: true },
-  trailingSlash: true, // recommended for GH Pages
-  basePath: isGhPages ? repoBasePath : '',
-  assetPrefix: isGhPages ? repoBasePath + '/' : '',
 }
 
 export default nextConfig
