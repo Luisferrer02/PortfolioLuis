@@ -1,3 +1,4 @@
+// pages/index.js
 import { useTranslation } from 'react-i18next'
 import { i18nInit } from '@/lib/i18n'
 import Section from '@/components/Section'
@@ -11,11 +12,15 @@ import SkillBadge from '@/components/SkillBadge'
 import NavBrand from '@/components/NavBrand'
 import { useMemo, useState } from 'react'
 import { SHOW_HERO_PLACEHOLDER, HERO_MAX_W, HERO_MAX_H, HERO_ROUNDED } from '@/lib/config'
+import { withBase } from '@/lib/paths'
 import i18next from 'i18next'
 
 i18nInit()
 
-const cvHref = () => (i18next.language || 'es').startsWith('en') ? '/cv/en.pdf' : '/cv/es.pdf'
+const cvHref = () => {
+  const path = (i18next.language || 'es').startsWith('en') ? '/cv/en.pdf' : '/cv/es.pdf'
+  return withBase(path)
+}
 
 const PROJECTS = Array.from({length: 6}).map((_,i)=> ({
   id: i+1,
@@ -118,7 +123,7 @@ export default function Home(){
                 {label:'Next.js', icon:'nextjs.svg'},
                 {label:'Node.js', icon:'node.svg'},
                 {label:'Java', icon:'java.svg'},
-                {label:'HTML/CSS', icon:'html.svg'},
+                {label:'HTML/CSS', icon:'htmlcss.svg'},
                 {label:'Kotlin', icon:'kotlin.svg'},
                 {label:'C++', icon:'cpp.svg'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
@@ -128,9 +133,9 @@ export default function Home(){
             <h3 className="font-extrabold mb-3">{t('skills.groups.databases')}</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                {label:'SQL', icon:'sql.svg'},
-                {label:'MongoDB', icon:'mongodb.svg'},
-                {label:'Redis', icon:'redis.svg'}
+                {label:'SQL (Advanced)', icon:'sql.svg'},
+                {label:'MongoDB (Advanced)', icon:'mongodb.svg'},
+                {label:'Redis (Proficient)', icon:'redis.svg'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
             </div>
           </div>
@@ -138,11 +143,11 @@ export default function Home(){
             <h3 className="font-extrabold mb-3">{t('skills.groups.workflow')}</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                {label:'Git', icon:'github.svg'},
-                {label:'Agile', icon:'jira.svg'},
+                {label:'Git', icon:'git.svg'},
+                {label:'Agile/Scrum', icon:'agile.svg'},
                 {label:'Linux', icon:'linux.svg'},
                 {label:'Docker', icon:'docker.svg'},
-                {label:'Jupyter', icon:'jupyter.svg'}
+                {label:'Jupyter Notebooks', icon:'jupyter.svg'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
             </div>
           </div>
@@ -150,10 +155,10 @@ export default function Home(){
             <h3 className="font-extrabold mb-3">{t('skills.groups.dsai')}</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                {label:'Python', icon:'python.svg'},
-                {label:'Deep Learning', icon:'deep-learning.png'},
+                {label:'Python (Advanced)', icon:'python.svg'},
+                {label:'Deep Learning', icon:'dl.svg'},
                 {label:'Machine Learning', icon:'ml.svg'},
-                {label:'CNN', icon:'cnn.png'}
+                {label:'CNN', icon:'cnn.svg'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
             </div>
           </div>
@@ -189,8 +194,12 @@ export default function Home(){
             <div className="font-black">{t('contact.email')}</div>
             <div>luisferrer2002@gmail.com</div>
           </a>
-          <a className="card p-6 block btn" href="/cv/en.pdf" download><IconDownload/>{t('contact.cv')}</a>
-          <a className="card p-6 block btn" href="/cv/es.pdf" download><IconDownload/>{t('contact.cvEs')}</a>
+          <a className="card p-6 block btn" href={withBase('/cv/en.pdf')} download>
+            <IconDownload />{t('contact.cv')}
+          </a>
+          <a className="card p-6 block btn" href={withBase('/cv/es.pdf')} download>
+            <IconDownload />{t('contact.cvEs')}
+          </a>
         </div>
       </Section>
 
