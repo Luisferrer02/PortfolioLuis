@@ -12,8 +12,7 @@ export default function SkillBadge({ label, icon }) {
     return <span className="skill-badge px-3 py-1 text-xs font-mono">{label}</span>
   }
 
-  // ICONS mode: un único cuadrado con borde. Dentro va el icono (object-contain).
-  // Si no hay icono o falla la carga, mostramos la abreviatura dentro del cuadrado.
+  // ICONS mode: un único cuadrado con borde. Icono dentro; si falla, abreviatura.
   const filename = icon?.replace(/^icons\//, '') || ''
   const [failed, setFailed] = useState(false)
 

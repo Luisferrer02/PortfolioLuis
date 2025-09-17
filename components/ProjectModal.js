@@ -8,7 +8,7 @@ export default function ProjectModal({ open, onClose, project }){
   if(!open || !project) return null
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-black/70" onClick={onClose}>
-      <div className="card max-w-2xl w-[92%] p-6 bg-white dark:bg-black" onClick={(e)=>e.stopPropagation()}>
+      <div className="card max-w-2xl w-[92%] p-6" onClick={(e)=>e.stopPropagation()}>
         <h3 className="text-3xl font-black mb-2">{project.title}</h3>
         <p className="mb-4">{project.description}</p>
         <ul className="list-disc pl-6 space-y-2 mb-6 text-sm">

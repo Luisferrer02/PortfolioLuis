@@ -8,7 +8,11 @@ export default function ProjectCard({ project, onOpen }){
       </div>
       <p className="mb-3 text-sm md:text-base">{description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
-        {tags.map(t => <span key={t} className="px-2 py-1 border-2 border-black dark:border-white text-xs font-mono">{t}</span>)}
+        {tags.map(t => (
+          <span key={t} className="px-2 py-1 border-2 border-ink text-xs font-mono">
+            {t}
+          </span>
+        ))}
       </div>
       <div className="flex gap-3">
         {links.github && <a className="btn" href={links.github} target="_blank" rel="noreferrer">GitHub</a>}

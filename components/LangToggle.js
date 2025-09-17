@@ -1,4 +1,3 @@
-// components/LangToggle.js
 import i18next from 'i18next'
 export default function LangToggle(){
   const toggle = () => {
