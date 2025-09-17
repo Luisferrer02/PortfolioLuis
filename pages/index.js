@@ -123,7 +123,7 @@ export default function Home(){
                 {label:'Next.js', icon:'nextjs.svg'},
                 {label:'Node.js', icon:'node.svg'},
                 {label:'Java', icon:'java.svg'},
-                {label:'HTML/CSS', icon:'htmlcss.svg'},
+                {label:'HTML/CSS', icon:'html.svg'},
                 {label:'Kotlin', icon:'kotlin.svg'},
                 {label:'C++', icon:'cpp.svg'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
@@ -133,9 +133,9 @@ export default function Home(){
             <h3 className="font-extrabold mb-3">{t('skills.groups.databases')}</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                {label:'SQL (Advanced)', icon:'sql.svg'},
-                {label:'MongoDB (Advanced)', icon:'mongodb.svg'},
-                {label:'Redis (Proficient)', icon:'redis.svg'}
+                {label:'SQL', icon:'sql.svg'},
+                {label:'MongoDB', icon:'mongodb.svg'},
+                {label:'Redis', icon:'redis.svg'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
             </div>
           </div>
@@ -143,11 +143,11 @@ export default function Home(){
             <h3 className="font-extrabold mb-3">{t('skills.groups.workflow')}</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                {label:'Git', icon:'git.svg'},
-                {label:'Agile/Scrum', icon:'agile.svg'},
+                 {label:'Git', icon:'github.svg'},
+                {label:'Agile', icon:'jira.svg'},
                 {label:'Linux', icon:'linux.svg'},
                 {label:'Docker', icon:'docker.svg'},
-                {label:'Jupyter Notebooks', icon:'jupyter.svg'}
+                {label:'Jupyter', icon:'jupyter.svg'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
             </div>
           </div>
@@ -155,10 +155,10 @@ export default function Home(){
             <h3 className="font-extrabold mb-3">{t('skills.groups.dsai')}</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                {label:'Python (Advanced)', icon:'python.svg'},
-                {label:'Deep Learning', icon:'dl.svg'},
+                {label:'Python', icon:'python.svg'},
+                {label:'Deep Learning', icon:'deep-learning.png'},
                 {label:'Machine Learning', icon:'ml.svg'},
-                {label:'CNN', icon:'cnn.svg'}
+                {label:'CNN', icon:'cnn.png'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
             </div>
           </div>
