@@ -52,6 +52,7 @@
     "utadMeta": "2023 – Current · Madrid, Spain",
     "utadBullets": ["Statistics, AI, ML, Big Data.", "Academic projects in ETL, predictive analysis and data visualization."]
   },
-  "contact": {"title": "Contact", "email": "Email", "cv": "CV (EN)", "cvEs": "CV (ES)"}
+  "contact": {"title": "Contact", "email": "Email", "cv": "CV (EN)", "cvEs": "CV (ES)"},
+  "themeToggle": { "light": "Light", "dark": "Dark", "system": "System", "toggleTo": "Switch to {{mode}}" }
 }
 

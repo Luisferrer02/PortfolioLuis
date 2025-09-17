@@ -2,18 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { --card: #fff; --card-ink: #000; }
-.dark :root { --card: #000; --card-ink: #fff; }
+
+:root{
+  --bg: #fafafa;         /* base clara */
+  --ink: #111111;        /* texto casi-negro */
+  --card: #ffffff;
+  --card-ink: #111111;
+  --shadow-ink: rgba(0,0,0,0.85);
+
+  /* NUEVOS ACENTOS (light) */
+  --accent: #222222;     /* negro suave */
+  --muted:  #f0f0f0;     /* casi-blanco para fondos */
+}
+.dark :root{
+  --bg: #0b0b0b;
+  --ink: #f2f2f2;
+  --card: #111111;
+  --card-ink: #f2f2f2;
+  --shadow-ink: rgba(255,255,255,0.85);
+
+  /* NUEVOS ACENTOS (dark) */
+  --accent: #e6e6e6;     /* blanco suave */
+  --muted:  #141414;     /* casi-negro para paneles */
+}
+
+/* Fade-in rápido una vez hidrata */
+html:not(.app-mounted) body { opacity: 0; }
+html.app-mounted body { opacity: 1; transition: opacity .15s ease; }
+
 
 html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); }
 
-/* Brutalist touches */
+
+/* Brutalist cards */
 .card {
-  @apply border-2 border-black dark:border-white bg-[var(--card)] text-[var(--card-ink)] shadow-[8px_8px_0_0_rgba(0,0,0,1)] dark:shadow-[8px_8px_0_0_rgba(255,255,255,1)] transition-transform;
+@apply border-2 bg-[var(--card)] text-[var(--card-ink)] transition-transform;
+border-color: var(--ink);
+box-shadow: 6px 6px 0 0 var(--shadow-ink);
 }
 .card:hover { transform: translate(-2px,-2px); }
 
+
+/* Buttons */
 .btn {
-  @apply border-2 border-black dark:border-white px-4 py-2 font-bold uppercase tracking-wide;
+@apply px-4 py-2 font-bold uppercase tracking-wide inline-flex items-center gap-2;
+border: 2px solid var(--ink);
+}
+.btn:hover { transform: translate(-1px,-1px); }
+
+
+/* Nav spacing helpers */
+.nav-link { @apply font-bold uppercase whitespace-nowrap; }
+
+
+/* Fixed photo frame that adapts shape (rounded) but has max bounds */
+.frame-fixed {
+max-width: 520px; /* tune if needed */
+max-height: 320px;
+width: 100%;
+@apply grid place-items-center overflow-hidden;
+border: 2px solid var(--ink);
+box-shadow: 6px 6px 0 0 var(--shadow-ink);
 }
 
+
+/* El borde de badges usa siempre la tinta del tema */
+.skill-badge { border: 2px solid var(--ink); }
+
+/* Cuadrado único para el modo iconos (sin marco interior) */
+.skill-square {
+  width: 44px;
+  height: 44px;
+  background: var(--card);
+  color: var(--card-ink);
+}
+
+.link-tile{
+  /* botón/azulejo uniforme y centrado */
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .5rem; text-align: center; font-weight: 700;
+  height: 3rem; padding: 0 1rem; width: 100%;
+  border: 2px solid var(--ink);
+}
+.link-tile > * { white-space: nowrap; }
+
+/* hover con leve movimiento y fondo sutil */
+.link-tile:hover {
+  transform: translate(-1px,-1px);
+  background: var(--muted);
+  box-shadow: 3px 3px 0 0 var(--shadow-ink);
+  transition: transform .05s linear;
+}
+
+/* Borde, fondo y texto basados en variables (funcionan en light/dark) */
+.border-ink   { border-color: var(--ink) !important; }
+.bg-ink       { background: var(--ink) !important; color: var(--bg) !important; }
+.text-ink     { color: var(--ink) !important; }
+.bg-card      { background: var(--card) !important; color: var(--card-ink) !important; }
+
+/* Botón activo (p. ej., filtros activos) */
+.btn-active   { background: var(--ink) !important; color: var(--bg) !important; }
+
+/* Bordes visibles siempre con la tinta del tema */
+.skill-badge  { border: 2px solid var(--ink); }
+
+/* Titulares/subrayado de sección con tinta del tema */
+.section-underline { border-color: var(--ink) !important; }

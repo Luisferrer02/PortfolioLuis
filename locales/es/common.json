@@ -52,5 +52,6 @@
     "utadMeta": "2023 – Actual · Madrid, España",
     "utadBullets": ["Estadística, IA, ML, Big Data.", "Proyectos de ETL, análisis predictivo y visualización de datos."]
   },
-  "contact": {"title": "Contacto", "email": "Correo", "cv": "CV (EN)", "cvEs": "CV (ES)"}
+  "contact": {"title": "Contacto", "email": "Correo", "cv": "CV (EN)", "cvEs": "CV (ES)"},
+  "themeToggle": { "light": "Claro", "dark": "Oscuro", "system": "Sistema", "toggleTo": "Cambiar a {{mode}}" }
 }
