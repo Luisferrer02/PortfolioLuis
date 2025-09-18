@@ -71,7 +71,7 @@ body { background: var(--bg); color: var(--ink); }
 .skill-square {
   width: 44px;
   height: 44px;
-  background: #ffffff !important; /* siempre blanco */
+  background: var(--card);
   color: var(--card-ink);
 }
 

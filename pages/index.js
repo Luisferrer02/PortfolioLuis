@@ -120,7 +120,6 @@ export default function Home(){
               {[
                 {label:'JavaScript', icon:'javascript.svg'},
                 {label:'React', icon:'react.svg'},
-                {label:'Next.js', icon:'nextjs.svg'},
                 {label:'Node.js', icon:'node.svg'},
                 {label:'Java', icon:'java.svg'},
                 {label:'HTML/CSS', icon:'html.svg'},
@@ -135,7 +134,8 @@ export default function Home(){
               {[
                 {label:'SQL', icon:'sql.svg'},
                 {label:'MongoDB', icon:'mongodb.svg'},
-                {label:'Redis', icon:'redis.svg'}
+                {label:'Redis', icon:'redis.svg'},
+                {label:'Neo4j', icon:'neo4j.png'}
               ].map(s=> <SkillBadge key={s.label} label={s.label} icon={s.icon} />)}
             </div>
           </div>
