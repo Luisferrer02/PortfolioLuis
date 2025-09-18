@@ -234,7 +234,7 @@ export default function Home() {
                 { label: "Kotlin", icon: "kotlin.svg" },
                 { label: "C++", icon: "cpp.svg" },
               ].map((s) => (
-                <SkillBadge key={s.label} label={s.label} icon={s.icon} />
+                <SkillBadge key={s.label} {...s} />
               ))}
             </div>
           </div>
