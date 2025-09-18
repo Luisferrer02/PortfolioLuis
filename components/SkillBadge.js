@@ -54,7 +54,6 @@ export default function SkillBadge({ label, icon, iconLight, iconDark }) {
         className="skill-badge skill-square overflow-hidden grid place-items-center"
         title={label}
         aria-label={label}
-        style={{ background: '#fff' }} // interior siempre blanco
       >
         {!src || failed ? (
           <span className="text-xs font-mono select-none">{abbr(label)}</span>
