@@ -1,4 +1,3 @@
-// pages/index.js
 import { useTranslation } from "react-i18next";
 import { i18nInit } from "@/lib/i18n";
 import Section from "@/components/Section";
@@ -22,30 +21,13 @@ import i18next from "i18next";
 
 i18nInit();
 
-const cvHref = () => {
-  const path = (i18next.language || "es").startsWith("en")
-    ? "/cv/en.pdf"
-    : "/cv/es.pdf";
-  return withBase(path);
+const cvInfo = () => {
+  const isEn = (i18next.language || "es").startsWith("en");
+  return {
+    href: withBase(isEn ? "/cv/en.pdf" : "/cv/es.pdf"),
+    download: isEn ? "Luis_Ferrer_CV_EN.pdf" : "Luis_Ferrer_CV_ES.pdf",
+  };
 };
-
-const PROJECTS = Array.from({ length: 6 }).map((_, i) => ({
-  id: i + 1,
-  title: `Project ${i + 1}`,
-  type: i % 3 === 0 ? "web" : i % 3 === 1 ? "ml" : "mobile",
-  tags:
-    i % 3 === 0
-      ? ["Next.js", "Tailwind", "Node"]
-      : i % 3 === 1
-      ? ["Python", "Pandas", "CNN"]
-      : ["React Native", "Expo"],
-  description:
-    "Short description goes here. Replace with your real project when ready.",
-  links: {
-    github: "https://github.com/luisferrer02",
-    demo: "https://luisferrer02.github.io/portfolio",
-  },
-}));
 
 const IconDownload = () => (
   <svg
@@ -67,19 +49,34 @@ const IconDownload = () => (
 
 export default function Home() {
   const { t } = useTranslation();
+
+  // Proyectos traducidos desde locales
+  const PROJECTS = (t("projects.items", { returnObjects: true }) || []).map(
+    (p) => ({
+      id: p.id,
+      type: p.type, // "web" | "ml" | "mobile"
+      title: p.title,
+      description: p.description,
+      tags: p.tags || [],
+      links: p.links || {},
+    })
+  );
+
   const [filter, setFilter] = useState("all");
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(null);
 
-  const filtered = useMemo(
-    () =>
-      filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.type === filter),
-    [filter]
-  );
+  const filtered = useMemo(() => {
+    if (filter === "all") return PROJECTS;
+    return PROJECTS.filter((p) => p.type === filter);
+  }, [PROJECTS, filter]);
+
   const openModal = (p) => {
     setActive(p);
     setOpen(true);
   };
+
+  const { href: cvHref, download: cvDownload } = cvInfo();
 
   return (
     <main className="min-h-screen font-display">
@@ -137,7 +134,7 @@ export default function Home() {
               <a className="btn" href="#projects">
                 {t("hero.ctaProjects")}
               </a>
-              <a className="btn" href={cvHref()} download="Luis_Ferrer_CV.pdf">
+              <a className="btn" href={cvHref} download={cvDownload}>
                 <IconDownload />
                 {t("hero.ctaCV")}
               </a>
@@ -213,6 +210,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* SKILLS */}
       <Section id="skills" title={t("skills.title")}>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="card p-5">
@@ -223,14 +221,14 @@ export default function Home() {
               {[
                 { label: "JavaScript", icon: "javascript.svg" },
                 { label: "React", icon: "react.svg" },
-                { label: "Node.js", icon: "node.svg" },
                 {
                   label: "Next.js",
-                  iconLight: "nextjs.png",
-                  iconDark: "nextjslight.webp",
+                  iconLight: "nextjs-light.png",
+                  iconDark: "nextjs-dark.png",
                 },
+                { label: "Node.js", icon: "node.svg" },
                 { label: "Java", icon: "java.svg" },
-                { label: "HTML/CSS", icon: "html.svg" },
+                { label: "HTML/CSS", icon: "htmlcss.svg" },
                 { label: "Kotlin", icon: "kotlin.svg" },
                 { label: "C++", icon: "cpp.svg" },
               ].map((s) => (
@@ -244,12 +242,11 @@ export default function Home() {
             </h3>
             <div className="flex flex-wrap gap-2">
               {[
-                { label: "SQL", icon: "sql.svg" },
-                { label: "MongoDB", icon: "mongodb.svg" },
-                { label: "Redis", icon: "redis.svg" },
-                { label: "Neo4j", icon: "neo4j.png" },
+                { label: "SQL (Advanced)", icon: "sql.svg" },
+                { label: "MongoDB (Advanced)", icon: "mongodb.svg" },
+                { label: "Redis (Proficient)", icon: "redis.svg" },
               ].map((s) => (
-                <SkillBadge key={s.label} label={s.label} icon={s.icon} />
+                <SkillBadge key={s.label} {...s} />
               ))}
             </div>
           </div>
@@ -259,13 +256,13 @@ export default function Home() {
             </h3>
             <div className="flex flex-wrap gap-2">
               {[
-                { label: "Git", icon: "github.svg" },
-                { label: "Agile", icon: "jira.svg" },
+                { label: "Git", icon: "git.svg" },
+                { label: "Agile/Scrum", icon: "agile.svg" },
                 { label: "Linux", icon: "linux.svg" },
                 { label: "Docker", icon: "docker.svg" },
-                { label: "Jupyter", icon: "jupyter.svg" },
+                { label: "Jupyter Notebooks", icon: "jupyter.svg" },
               ].map((s) => (
-                <SkillBadge key={s.label} label={s.label} icon={s.icon} />
+                <SkillBadge key={s.label} {...s} />
               ))}
             </div>
           </div>
@@ -273,16 +270,19 @@ export default function Home() {
             <h3 className="font-extrabold mb-3">{t("skills.groups.dsai")}</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                { label: "Python", icon: "python.svg" },
+                { label: "Python (Advanced)", icon: "python.svg" },
+                { label: "Deep Learning", icon: "dl.svg" },
                 { label: "Machine Learning", icon: "ml.svg" },
-                { label: "CNN", icon: "cnn.png" },
+                { label: "CNN", icon: "cnn.svg" },
               ].map((s) => (
-                <SkillBadge key={s.label} label={s.label} icon={s.icon} />
+                <SkillBadge key={s.label} {...s} />
               ))}
             </div>
           </div>
         </div>
       </Section>
+
+      {/* EXPERIENCE */}
       <Section id="experience" title={t("experience.title")}>
         <Timeline
           items={[
@@ -337,7 +337,7 @@ export default function Home() {
           <a
             className="card p-6 block btn"
             href={withBase("/cv/en.pdf")}
-            download="Luis_Ferrer_CV.pdf"
+            download="Luis_Ferrer_CV_EN.pdf"
           >
             <IconDownload />
             {t("contact.cv")}
@@ -345,7 +345,7 @@ export default function Home() {
           <a
             className="card p-6 block btn"
             href={withBase("/cv/es.pdf")}
-            download="Luis_Ferrer_CV.pdf"
+            download="Luis_Ferrer_CV_ES.pdf"
           >
             <IconDownload />
             {t("contact.cvEs")}

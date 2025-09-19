@@ -1,28 +1,57 @@
 {
-  "nav": {"projects": "Projects", "about": "About", "skills": "Skills", "experience": "Experience", "education": "Education", "contact": "Contact"},
+  "nav": {
+    "projects": "Projects",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact"
+  },
   "hero": {
     "badge": "Software Engineer in training",
     "headline": "Luis Ferrer Forteza",
-    "sub": "Building end‑to‑end web, data & AI solutions",
+    "sub": "I build end-to-end solutions across web, data and AI. Full-stack developer with experience in international Agile/Scrum teams.",
     "ctaProjects": "View Projects",
     "ctaCV": "Download CV"
   },
   "projects": {
-    "title": "Selected Projects",
-    "filters": {"all":"All","web":"Web","ml":"ML/AI","mobile":"Mobile"},
-    "placeholderDesc": "Short description goes here. Replace with your real project when ready.",
-    "details": "Details",
-    "github": "GitHub",
-    "demo": "Demo"
+    "title": "Featured Projects",
+    "filters": { "all": "All", "web": "Web", "ml": "ML/AI", "mobile": "Mobile" },
+    "items": [
+      {
+        "id": "p1",
+        "type": "web",
+        "title": "Hotel Search Engine",
+        "description": "Server-rendered search with caching, pagination and facet filters. Deployed to GitHub Pages.",
+        "tags": ["Next.js", "Tailwind", "Node"],
+        "links": { "github": "https://github.com/luisferrer02/project1", "demo": "https://luisferrer02.github.io/portfolio" }
+      },
+      {
+        "id": "p2",
+        "type": "ml",
+        "title": "Image Classifier (CNN)",
+        "description": "Keras/TensorFlow pipeline with data augmentation, train/val split and clear metrics.",
+        "tags": ["Python", "Keras", "CNN"],
+        "links": { "github": "https://github.com/luisferrer02/project2", "demo": "" }
+      },
+      {
+        "id": "p3",
+        "type": "mobile",
+        "title": "Expense Tracker",
+        "description": "React Native app with offline-first sync and simple charts.",
+        "tags": ["React Native", "Expo"],
+        "links": { "github": "https://github.com/luisferrer02/project3", "demo": "" }
+      }
+    ]
   },
   "about": {
-    "title": "About",
-    "text": "Software Engineer in training with experience in large-scale technology companies and Agile/Scrum teams. Solid foundation in programming, data analysis and AI (CNN), with full‑stack web & mobile experience from data engineering to application delivery. Fluent in English (C1), Spanish and Catalan."
+    "title": "About me",
+    "text": "Software Engineer in training with experience in large-scale tech companies and Agile/Scrum international teams. Solid background in programming, data analysis and AI (processing, visualization and CNNs). Full-stack web & mobile experience to deliver end-to-end solutions, from data engineering to application and services."
   },
   "skills": {
     "title": "Skills",
     "groups": {
-      "fullstack": "Full‑stack Development",
+      "fullstack": "Full-stack Development",
       "databases": "Databases",
       "workflow": "Workflow",
       "dsai": "Data Science & AI"
@@ -31,28 +60,38 @@
   "experience": {
     "title": "Experience",
     "juniperTitle": "Junior Developer Intern",
-    "juniperDates": "09/07/2024 – 09/08/2024 · Palma de Mallorca, Spain",
+    "juniperDates": "07/09/2024 – 08/09/2024 · Palma de Mallorca, Spain",
     "juniperBullets": [
-      "Software development and support focused on quality and scalability.",
-      "Troubleshooting and collaborative Agile projects.",
+      "Software development & support with focus on quality and scalability.",
+      "Troubleshooting and collaboration in Agile projects.",
       "Workflow optimization in real environments."
     ],
     "ericssonTitle": "Software Developer Intern",
     "ericssonDates": "07/2025 – Current · Madrid, Spain",
     "ericssonBullets": [
-      "Collaboration in an international full‑stack team (Agile/Scrum).",
-      "Feature development and bug fixing in production.",
-      "Exposure to corporate development practices.",
-      "Hands‑on CI, version control and deployment."
+      "Collaboration in an international full-stack team (Agile/Scrum).",
+      "New features and bug fixing in production.",
+      "Exposure to corporate development practices and CI/CD, VCS and deployments."
     ]
   },
   "education": {
     "title": "Education",
-    "utad": "Software Engineering — U‑tad (EQF level 6)",
-    "utadMeta": "2023 – Current · Madrid, Spain",
-    "utadBullets": ["Statistics, AI, ML, Big Data.", "Academic projects in ETL, predictive analysis and data visualization."]
+    "utad": "Software Engineering — U-Tad",
+    "utadMeta": "09/01/2023 – Current · EQF level 6",
+    "utadBullets": [
+      "Statistics, AI, machine learning and big data foundations.",
+      "Academic projects in ETL, predictive analysis and data visualization."
+    ]
   },
-  "contact": {"title": "Contact", "email": "Email", "cv": "CV (EN)", "cvEs": "CV (ES)"},
-  "themeToggle": { "light": "Light", "dark": "Dark", "system": "System", "toggleTo": "Switch to {{mode}}" }
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "cv": "Download CV (EN)",
+    "cvEs": "Download CV (ES)"
+  },
+  "themeToggle": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggleTo": "Switch to {{mode}}"
+  }
 }
-
