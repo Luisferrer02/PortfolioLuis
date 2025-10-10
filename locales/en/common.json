@@ -24,6 +24,7 @@
         "title": "Hotel Search Engine",
         "description": "Server-rendered search with caching, pagination and facet filters. Deployed to GitHub Pages.",
         "tags": ["Next.js", "Tailwind", "Node"],
+        "hasDemo": true,
         "links": { "github": "https://github.com/luisferrer02/project1", "demo": "https://luisferrer02.github.io/portfolio" }
       },
       {
@@ -32,6 +33,7 @@
         "title": "Image Classifier (CNN)",
         "description": "Keras/TensorFlow pipeline with data augmentation, train/val split and clear metrics.",
         "tags": ["Python", "Keras", "CNN"],
+        "hasDemo": false,
         "links": { "github": "https://github.com/luisferrer02/project2", "demo": "" }
       },
       {
@@ -40,6 +42,7 @@
         "title": "Expense Tracker",
         "description": "React Native app with offline-first sync and simple charts.",
         "tags": ["React Native", "Expo"],
+        "hasDemo": false,
         "links": { "github": "https://github.com/luisferrer02/project3", "demo": "" }
       }
     ]

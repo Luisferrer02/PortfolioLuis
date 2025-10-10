@@ -59,6 +59,7 @@ export default function Home() {
       description: p.description,
       tags: p.tags || [],
       links: p.links || {},
+      hasDemo: p.hasDemo || false,
     })
   );
 

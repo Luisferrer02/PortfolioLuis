@@ -1,5 +1,5 @@
 export default function ProjectCard({ project, onOpen }){
-  const { title, tags, description, links } = project
+  const { title, tags, description, links, hasDemo } = project
   return (
     <div className="card p-5">
       <div className="flex items-center justify-between gap-4 mb-2">
@@ -16,7 +16,7 @@ export default function ProjectCard({ project, onOpen }){
       </div>
       <div className="flex gap-3">
         {links.github && <a className="btn" href={links.github} target="_blank" rel="noreferrer">GitHub</a>}
-        {links.demo && <a className="btn" href={links.demo} target="_blank" rel="noreferrer">Demo</a>}
+        {hasDemo && links.demo && <a className="btn" href={links.demo} target="_blank" rel="noreferrer">Demo</a>}
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ export default function ProjectModal({ open, onClose, project }){
         </ul>
         <div className="flex gap-3 justify-end">
           {project.links.github && <a className="btn" href={project.links.github} target="_blank" rel="noreferrer">GitHub</a>}
-          {project.links.demo && <a className="btn" href={project.links.demo} target="_blank" rel="noreferrer">Demo</a>}
+          {project.hasDemo && project.links.demo && <a className="btn" href={project.links.demo} target="_blank" rel="noreferrer">Demo</a>}
           <button className="btn" onClick={onClose}>Close</button>
         </div>
       </div>

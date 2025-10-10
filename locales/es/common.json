@@ -24,6 +24,7 @@
         "title": "Buscador de hoteles",
         "description": "Búsqueda SSR con caché, paginación y filtros. Despliegue en GitHub Pages.",
         "tags": ["Next.js", "Tailwind", "Node"],
+        "hasDemo": true,
         "links": { "github": "https://github.com/luisferrer02/project1", "demo": "https://luisferrer02.github.io/portfolio" }
       },
       {
@@ -32,6 +33,7 @@
         "title": "Clasificador de imágenes (CNN)",
         "description": "Pipeline con Keras/TensorFlow, data augmentation y métricas claras.",
         "tags": ["Python", "Keras", "CNN"],
+        "hasDemo": false,
         "links": { "github": "https://github.com/luisferrer02/project2", "demo": "" }
       },
       {
@@ -40,6 +42,7 @@
         "title": "Gestor de gastos",
         "description": "App React Native con sincronización offline-first y gráficas.",
         "tags": ["React Native", "Expo"],
+        "hasDemo": false,
         "links": { "github": "https://github.com/luisferrer02/project3", "demo": "" }
       }
     ]
